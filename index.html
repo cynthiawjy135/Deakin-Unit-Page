@@ -22,6 +22,51 @@
     To be eligible to obtain a pass in this unit, students must meet certain milestones as part of the portfolio.
     </p>
     <a href="https://www.deakin.edu.au/students/enrolment-and-fees/fees"> > Current students</a>
+<!-- BEGIN: CONTRIBUTED SECTION - ADDED FOR GITHUB VERSION CONTROL PRACTICE (Course Tables) -->
+
+    <hr>
+    <h2>Search Courses</h2>
+    <input type="text" id="searchInput" placeholder="Search by course code or title...">
+    <button onclick="filterCourses()">Search</button>
+
+    <h2>Course List</h2>
+    <table id="coursesTable">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>CS101</td><td>Introduction to Programming</td><td>3</td></tr>
+            <tr><td>CS102</td><td>Data Structures</td><td>4</td></tr>
+            <tr><td>CS103</td><td>Algorithms</td><td>4</td></tr>
+            <tr><td>DB202</td><td>Database Systems</td><td>4</td></tr>
+            <tr><td>AI310</td><td>Artificial Intelligence</td><td>3</td></tr>
+            <tr><td>WD205</td><td>Web Development</td><td>3</td></tr>
+            <tr><td>SE301</td><td>Software Engineering</td><td>3</td></tr>
+            <tr><td>CY400</td><td>Cybersecurity Fundamentals</td><td>3</td></tr>
+            <tr><td>ML350</td><td>Machine Learning</td><td>4</td></tr>
+            <tr><td>UX220</td><td>User Experience Design</td><td>2</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filterCourses() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("#coursesTable tbody tr");
+
+            rows.forEach(row => {
+                const code = row.cells[0].textContent.toLowerCase();
+                const title = row.cells[1].textContent.toLowerCase();
+                row.classList.toggle("hide", !code.includes(input) && !title.includes(input));
+            });
+        }
+    </script>
+
+    <!-- END: My Contribution for Git Practice -->
+
 </body>
 
 </html>
